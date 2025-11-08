@@ -7,11 +7,11 @@ Shows your current user, working directory, active virtual environment (Python/C
 
 ## ✨ Features
 
-- 🖥️ macOS-friendly design with Apple logo  
-- 🧪 Shows active **Python virtualenv** or **Conda environment**  
-- 💾 Displays **current Git branch** and indicates uncommitted changes  
-- 🪶 Lightweight — pure Zsh, no plugins required  
-- 🎨 Supports **Nerd Fonts** and powerline icons  
+- 🖥️ macOS-friendly design with Apple logo
+- 🧪 Shows active **Python virtualenv** or **Conda environment**
+- 💾 Displays **current Git branch** and indicates uncommitted changes
+- 🪶 Lightweight — pure Zsh, no plugins required
+- 🎨 Supports **Nerd Fonts** and powerline icons
 
 ---
 
@@ -24,6 +24,7 @@ curl -fsSL https://raw.githubusercontent.com/martin-luik/terminal-prompt/main/in
 ```
 
 This will:
+
 1. Download the latest version of the prompt into `~/.terminal-prompt/`
 2. Automatically update your `~/.zshrc` to source the prompt
 
@@ -72,12 +73,34 @@ local green=84
 
 ---
 
-## 🪄 Uninstall
+## 🧹 Uninstall
 
-To remove it, simply delete the folder and comment out the line in `~/.zshrc`:
+You can safely uninstall the prompt **and automatically remove its reference** from `~/.zshrc` using this command:
 
 ```bash
-rm -rf ~/.terminal-prompt
+curl -fsSL https://raw.githubusercontent.com/martin-luik/terminal-prompt/main/uninstall.sh | bash
+```
+
+What this does:
+
+1. Deletes the lines between
+   ```bash
+   # >>> terminal-prompt start >>>
+   # <<< terminal-prompt end <<<
+   ```
+   inside your `~/.zshrc`.
+2. Removes the folder `~/.terminal-prompt`.
+
+Alternatively, if you installed manually:
+
+```bash
+./uninstall.sh
+```
+
+After uninstalling, reload your shell:
+
+```bash
+source ~/.zshrc
 ```
 
 ---
